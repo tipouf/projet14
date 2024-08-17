@@ -28,3 +28,13 @@ th, td {
     white-space: nowrap;
 }
 
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.active {
+    background-color: #3e8e41;
+    color: white;
+}
