@@ -81,15 +81,18 @@ const List = () => {
   return (
     <>
       <h1>Current Employees</h1>
-      <div className="page-size-container">
+      <div className="top-container">
+        <div className="page-size-container">
         <span>Page size:</span>
-        <select value={pageSize} onChange={handlePageSizeChange}>
+        <select value={pageSize} onChange={handlePageSizeChange} className="form-input">
           <option value={10}>10</option>
           <option value={20}>20</option>
           <option value={50}>50</option>
         </select>
       </div>
-      <input type="text" value={search} onChange={handleSearch} placeholder="Search" className="search" />
+
+      <input type="text" value={search} onChange={handleSearch} placeholder="Search" className="form-input search" />
+      </div>
       {showNoResult ? (
         <p className="no-result">No result</p>
       ) : (
