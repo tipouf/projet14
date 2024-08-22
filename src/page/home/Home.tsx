@@ -129,6 +129,7 @@ const Home = () => {
                   <option value="">Select a state</option>
                   <option value="AL">Alabama (AL)</option>
                   <option value="AK">Alaska (AK)</option>
+                  <option value="AZ">Arizona (AZ)</option>
                 </select>
               </div>
               <div className="form-group">
