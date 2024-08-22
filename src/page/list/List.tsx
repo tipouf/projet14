@@ -1,6 +1,6 @@
-import { useState } from "react";
-import './List.scss';
 import Table from "../../component/table/Table";
+import { Link } from 'react-router-dom';
+import './List.scss'
 
 type Employee = {
   firstName: string;
@@ -17,10 +17,11 @@ type Employee = {
 
 const List = () => {
   const employeeList = JSON.parse(localStorage.getItem('employeeList') || '[]') as Employee[]
-  
+
 
   return (
     <>
+    <Link to="/">Home</Link>
       <h1>Current Employees</h1>
       <Table list={employeeList} />
     </>

@@ -7,11 +7,14 @@ type TableList = {
 type Order = { [key: string]: 'asc' | 'desc' | null };
   
 const Table = ( { list }: { list: TableList[] }) => {
+
       const [order, setOrder] = useState<Order>(() => {
         const orderObj: Order = {};
-        Object.keys(list[0]).forEach(key => {
-          orderObj[key] = null;
-        });
+        if (list.length > 0) {
+          Object.keys(list[0]).forEach(key => {
+            orderObj[key] = null;
+          });
+        }
         return orderObj;
       });
     
