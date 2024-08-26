@@ -1,6 +1,6 @@
 import Table from "../../component/table/Table";
 import { Link } from 'react-router-dom';
-import './List.scss'
+
 
 type Employee = {
   firstName: string;

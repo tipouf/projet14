@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import './Table.scss'
 
 type TableList = {
     [key: string]: string;
@@ -75,8 +76,9 @@ const Table = ( { list }: { list: TableList[] }) => {
             <span>Page size:</span>
             <select value={pageSize} onChange={handlePageSizeChange} className="form-input">
               <option value={10}>10</option>
-              <option value={20}>20</option>
+              <option value={25}>25</option>
               <option value={50}>50</option>
+              <option value={100}>100</option>
             </select>
           </div>
     
@@ -89,8 +91,8 @@ const Table = ( { list }: { list: TableList[] }) => {
               <thead>
                 <tr>
                   {Object.keys(order).map((key) => (
-                    <th key={key} onClick={() => handleSort(key)}>
-                      {key} {key === lastClickedKey && order[key] !== null && (order[key] === 'asc' ? <span>&#9660;</span> : <span>&#9650;</span>)}
+                    <th key={key} onClick={() => handleSort(key)} >
+                      {key.replace(/([A-Z])/g, ' $1').replace(/^./, match => match.toUpperCase())} {key === lastClickedKey ? (order[key] === 'asc' ? <span>&#9660;</span> : <span>&#9650;</span>) : <><span>&#9660;</span><span>&#9650;</span></>}
                     </th>
                   ))}
                 </tr>
@@ -108,7 +110,8 @@ const Table = ( { list }: { list: TableList[] }) => {
           )}
           {!showNoResult && (
             <div className="pagination-container">
-              {/* <span>Page {currentPage} of {pageCount}</span> */}
+              <span className="page-info">Page {currentPage} of {pageCount} - {tableList.length} items</span>
+
               <div className="page-number-container">
                 {Array.from({ length: pageCount }, (_, index) => (
                   <button
