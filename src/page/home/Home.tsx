@@ -1,7 +1,7 @@
-
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Home.scss';
+
 const Home = () => {
     const initialEmployeeData = {
         firstName: '',
@@ -20,6 +20,8 @@ const Home = () => {
         return storedList ? JSON.parse(storedList) : [];
       });
     
+      const [isModalOpen, setIsModalOpen] = useState(false);
+    
       const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = event.target;
         setEmployeeData((prevData) => ({ ...prevData, [name]: value }));
@@ -30,6 +32,7 @@ const Home = () => {
         const newList = [...employeeList, employeeData];
         localStorage.setItem('employeeList', JSON.stringify(newList));
         setEmployeeList(newList);
+        setIsModalOpen(true);
         setEmployeeData(initialEmployeeData);
       };
     
@@ -121,11 +124,12 @@ const Home = () => {
                   id="state"
                   name="state"
                   value={employeeData.state}
-                  onChange={handleInputChange}
+                  onChange={handleInputChange as any}
                 >
                   <option value="">Select a state</option>
                   <option value="AL">Alabama (AL)</option>
                   <option value="AK">Alaska (AK)</option>
+                  <option value="AZ">Arizona (AZ)</option>
                 </select>
               </div>
               <div className="form-group">
@@ -139,8 +143,8 @@ const Home = () => {
                   onChange={handleInputChange}
                 />
               </div>
+              </div>
               <div className="form-group">
-                </div>
                 <label className="form-label" htmlFor="department">Department</label>
                 <select
                   className="form-input"
@@ -163,16 +167,17 @@ const Home = () => {
               >
                 Save
               </button>
-            </form>
+              </form>
           </div>
-          <div className="employee-list-container">
-          <h2 className="form-title">Employee List</h2>
-          <ul>
-            {employeeList.map((employee, index) => (
-              <li key={index}>{employee.firstName} {employee.lastName} {employee.startDate} {employee.department} {employee.dateOfBirth}</li>
-            ))}
-          </ul>
-          </div>
+          {isModalOpen && (
+            <div className="modal">
+              <div className="modal-content">
+                <h2>Employee Created</h2>
+                <p>Employee successfully created!</p>
+                <button onClick={() => setIsModalOpen(false)}>Close</button>
+              </div>
+            </div>
+          )}
         </>
       );
     };
