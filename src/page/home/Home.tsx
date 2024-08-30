@@ -1,8 +1,10 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import './Home.scss';
+import { EmployeeContext, Employee } from '../../context/useContext';
 
 const Home = () => {
+  const { saveEmployee } = useContext(EmployeeContext);
     const initialEmployeeData = {
         firstName: '',
         lastName: '',
@@ -14,11 +16,8 @@ const Home = () => {
         zipCode: '',
         department: '',
       };
+
       const [employeeData, setEmployeeData] = useState(initialEmployeeData);
-      const [employeeList, setEmployeeList] = useState(() => {
-        const storedList = localStorage.getItem('employeeList');
-        return storedList ? JSON.parse(storedList) : [];
-      });
     
       const [isModalOpen, setIsModalOpen] = useState(false);
     
@@ -29,9 +28,7 @@ const Home = () => {
     
       const handleSaveEmployee = (event: React.FormEvent) => {
         event.preventDefault();
-        const newList = [...employeeList, employeeData];
-        localStorage.setItem('employeeList', JSON.stringify(newList));
-        setEmployeeList(newList);
+        saveEmployee(employeeData as Employee);
         setIsModalOpen(true);
         setEmployeeData(initialEmployeeData);
       };
@@ -183,3 +180,4 @@ const Home = () => {
     };
 
 export default Home
+
