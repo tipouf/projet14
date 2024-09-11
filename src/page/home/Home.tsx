@@ -1,7 +1,9 @@
 import { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { Grid, TextField, Button, Select, MenuItem, Modal, Box, FormControl, FormLabel } from '@mui/material';
 import './Home.scss';
 import { EmployeeContext, Employee } from '../../context/useContext';
+import hrnet from '../../../public/hrnet.png';
 
 const Home = () => {
   const { saveEmployee } = useContext(EmployeeContext);
@@ -21,9 +23,11 @@ const Home = () => {
     
       const [isModalOpen, setIsModalOpen] = useState(false);
     
-      const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        const { name, value } = event.target;
-        setEmployeeData((prevData) => ({ ...prevData, [name]: value }));
+      const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+        setEmployeeData((prevData) => ({
+          ...prevData,
+          [event.target.name]: event.target.value,
+        }));
       };
     
       const handleSaveEmployee = (event: React.FormEvent) => {
@@ -35,149 +39,183 @@ const Home = () => {
     
       return (
         <>
-          <h1 className="app-title">
-            HRnet
-          </h1>
+        <div className="form-container">
+          <div className="app-title">
+            <img src={hrnet} alt="HRnet" className="app-logo" />
+          </div>
           <div className="employee-container">
           <Link to="/list">View current employees</Link>
           </div>
-          <div className="form-container">
             <h2 className="form-title">
               Create Employee
             </h2>
             <form className="form" id="create-employee" onSubmit={handleSaveEmployee}>
-              <div className="form-group">
-                <label className="form-label" htmlFor="firstName">First Name</label>
-                <input
-                  type="text"
-                  className="form-input"
-                  id="firstName"
-                  name="firstName"
-                  value={employeeData.firstName}
-                  onChange={handleInputChange}
-                />
-              </div>
-              <div className="form-group">
-                <label className="form-label" htmlFor="lastName">Last Name</label>
-                <input
-                  type="text"
-                  className="form-input"
-                  id="lastName"
-                  name="lastName"
-                  value={employeeData.lastName}
-                  onChange={handleInputChange}
-                />
-              </div>
-              <div className="form-group">
-                <label className="form-label" htmlFor="dateOfBirth">Date of Birth</label>
-                <input
-                  type="date"
-                  className="form-input"
-                  id="dateOfBirth"
-                  name="dateOfBirth"
-                  value={employeeData.dateOfBirth}
-                  onChange={handleInputChange}
-                />
-              </div>
-              <div className="form-group">
-                <label className="form-label" htmlFor="startDate">Start Date</label>
-                <input
-                  type="date"
-                  className="form-input"
-                  id="startDate"
-                  name="startDate"
-                  value={employeeData.startDate}
-                  onChange={handleInputChange}
-                />
-              </div>
-              <div>
-                <h2>Address</h2>
-              <div className="form-group">
-                <label className="form-label" htmlFor="street">Street</label>
-                <input
-                  type="text"
-                  className="form-input"
-                  id="street"
-                  name="street"
-                  value={employeeData.street}
-                  onChange={handleInputChange}
-                />
-              </div>
-              <div className="form-group">
-                <label className="form-label" htmlFor="city">City</label>
-                <input
-                  type="text"
-                  className="form-input"
-                  id="city"
-                  name="city"
-                  value={employeeData.city}
-                  onChange={handleInputChange}
-                />
-              </div>
-              <div className="form-group">
-                <label className="form-label" htmlFor="state">State</label>
-                <select
-                  className="form-input"
-                  id="state"
-                  name="state"
-                  value={employeeData.state}
-                  onChange={handleInputChange as any}
-                >
-                  <option value="">Select a state</option>
-                  <option value="AL">Alabama (AL)</option>
-                  <option value="AK">Alaska (AK)</option>
-                  <option value="AZ">Arizona (AZ)</option>
-                </select>
-              </div>
-              <div className="form-group">
-                <label className="form-label" htmlFor="zipCode">Zip Code</label>
-                <input
-                  type="number"
-                  className="form-input"
-                  id="zipCode"
-                  name="zipCode"
-                  value={employeeData.zipCode}
-                  onChange={handleInputChange}
-                />
-              </div>
-              </div>
-              <div className="form-group">
-                <label className="form-label" htmlFor="department">Department</label>
-                <select
-                  className="form-input"
-                  id="department"
-                  name="department"
-                  value={employeeData.department}
-                  onChange={handleInputChange}
-                >
-                  <option value="">Select a department</option>
-                  <option value="Sales">Sales</option>
-                  <option value="Marketing">Marketing</option>
-                  <option value="Engineering">Engineering</option>
-                  <option value="Human Resources">Human Resources</option>
-                  <option value="Legal">Legal</option>
-                </select>
-                </div>
-              <button
+              <Grid container spacing={2}>
+                <Grid item xs={12} sm={12}>
+                  <FormControl fullWidth>
+                    <FormLabel>First Name</FormLabel>
+                    <TextField
+                      fullWidth
+                      name="firstName"
+                      value={employeeData.firstName}
+                      onChange={(e) => handleChange(e as React.ChangeEvent<HTMLInputElement | HTMLSelectElement>)}
+                      placeholder="Enter first name"
+                      required
+                    />
+                  </FormControl>
+                </Grid>
+                <Grid item xs={12} sm={12}>
+                  <FormControl fullWidth>
+                    <FormLabel>Last Name</FormLabel>
+                    <TextField
+                      fullWidth
+                      name="lastName"
+                      value={employeeData.lastName}
+                      onChange={(e) => handleChange(e as React.ChangeEvent<HTMLInputElement | HTMLSelectElement>)}
+                      placeholder="Enter last name"
+                      required
+                    />
+                  </FormControl>
+                </Grid>
+                <Grid item xs={12} sm={12}>
+                  <FormControl fullWidth>
+                    <FormLabel>Date of Birth</FormLabel>
+                    <TextField
+                      fullWidth
+                      type="date"
+                      name="dateOfBirth"
+                      value={employeeData.dateOfBirth}
+                      onChange={(e) => handleChange(e as React.ChangeEvent<HTMLInputElement | HTMLSelectElement>)}
+                      placeholder="Enter date of birth"
+                      required
+                    />
+                  </FormControl>
+                </Grid>
+                <Grid item xs={12} sm={12}>
+                  <FormControl fullWidth>
+                    <FormLabel>Start Date</FormLabel>
+                    <TextField
+                      fullWidth
+                      type="date"
+                      name="startDate"
+                      value={employeeData.startDate}
+                      onChange={(e) => handleChange(e as React.ChangeEvent<HTMLInputElement | HTMLSelectElement>)}
+                      placeholder="Enter start date"
+                      required
+                    />
+                  </FormControl>
+                </Grid>
+                <Grid item xs={12}>
+                  <h2>Address</h2>
+                </Grid>
+                <Grid item xs={12} sm={12}>
+                  <FormControl fullWidth>
+                    <FormLabel>Street</FormLabel>
+                    <TextField
+                      fullWidth
+                      name="street"
+                      value={employeeData.street}
+                      onChange={(e) => handleChange(e as React.ChangeEvent<HTMLInputElement | HTMLSelectElement>)}
+                      placeholder="Enter street"
+                      required
+                    />
+                  </FormControl>
+                </Grid>
+                <Grid item xs={12} sm={12}>
+                  <FormControl fullWidth>
+                    <FormLabel>City</FormLabel>
+                    <TextField
+                      fullWidth
+                      name="city"
+                      value={employeeData.city}
+                      onChange={(e) => handleChange(e as React.ChangeEvent<HTMLInputElement | HTMLSelectElement>)}
+                      placeholder="Enter city"
+                      required
+                    />
+                  </FormControl>
+                </Grid>
+                <Grid item xs={12} sm={12}>
+                  <FormControl fullWidth>
+                    <FormLabel>State</FormLabel>
+                    <Select
+                      fullWidth
+                      name="state"
+                      value={employeeData.state}
+                      onChange={(e) => handleChange(e as React.ChangeEvent<HTMLInputElement | HTMLSelectElement>)}
+                      displayEmpty
+                      placeholder="Select a state"
+                      required
+                    >
+                      <MenuItem value="" disabled>Select a state</MenuItem>
+                      <MenuItem value="AL">Alabama (AL)</MenuItem>
+                      <MenuItem value="AK">Alaska (AK)</MenuItem>
+                      <MenuItem value="AZ">Arizona (AZ)</MenuItem>
+                    </Select>
+                  </FormControl>
+                </Grid>
+                <Grid item xs={12} sm={12}>
+                  <FormControl fullWidth>
+                    <FormLabel>Zip Code</FormLabel>
+                    <TextField
+                      fullWidth
+                      type="number"
+                      name="zipCode"
+                      value={employeeData.zipCode}
+                      onChange={(e) => handleChange(e as React.ChangeEvent<HTMLInputElement | HTMLSelectElement>)}
+                      placeholder="Enter zip code"
+                      required
+                    />
+                  </FormControl>
+                </Grid>
+                <Grid item xs={12} sm={12}>
+                  <FormControl fullWidth>
+                    <FormLabel>Department</FormLabel>
+                    <Select
+                      fullWidth
+                      name="department"
+                      value={employeeData.department}
+                      onChange={(e) => handleChange(e as React.ChangeEvent<HTMLInputElement | HTMLSelectElement>)}
+                      displayEmpty
+                      required
+                    >
+                      <MenuItem value="" disabled>Select a department</MenuItem>
+                      <MenuItem value="Sales">Sales</MenuItem>
+                      <MenuItem value="Marketing">Marketing</MenuItem>
+                      <MenuItem value="Engineering">Engineering</MenuItem>
+                      <MenuItem value="Human Resources">Human Resources</MenuItem>
+                      <MenuItem value="Legal">Legal</MenuItem>
+                    </Select>
+                  </FormControl>
+                </Grid>
+              </Grid>
+              <Button
                 type="submit"
-                className="form-button"
+                variant="contained"
+                color="primary"
+                fullWidth
               >
                 Save
-              </button>
-              </form>
+              </Button>
+            </form>
           </div>
-          {isModalOpen && (
-            <div className="modal">
-              <div className="modal-content">
-                <h2>Employee Created</h2>
-                <p>Employee successfully created!</p>
-                <button onClick={() => setIsModalOpen(false)}>Close</button>
-              </div>
-            </div>
-          )}
+          <Modal
+            open={isModalOpen}
+            className="modal"
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <Box className="modal-content" sx={{ width: 400, backgroundColor: 'white', padding: 2 }}>
+              <h2>Employee Created</h2>
+              <p>Employee successfully created!</p>
+              <Button onClick={() => setIsModalOpen(false)}>Close</Button>
+            </Box>
+          </Modal>
         </>
       );
     };
 
-export default Home
+export default Home;
 

@@ -1,35 +1,23 @@
-import Table from "../../component/table/Table";
+// import Table from "../../component/table/Table";
 import { Link } from 'react-router-dom';
 import { EmployeeContext } from "../../context/useContext";
 import { useContext } from "react";
+import { Table }  from 'react-auto-table-ts-alpha';
 
-
-// type Employee = {
-//   firstName: string;
-//   lastName: string;
-//   startDate: string;
-//   dateOfBirth: string;
-//   street: string;
-//   city: string;
-//   state: string;
-//   zipCode: string;
-//   department: string;
-// }
-
+import fakeData from "../../../fakeData.json"
 
 const List = () => {
-  // const employeeList = JSON.parse(localStorage.getItem('employeeList') || '[]') as Employee[]
 
   const {employeeList} = useContext(EmployeeContext)
 
-  console.log("employeeList",employeeList)
+  const list = employeeList.length > 0 ? employeeList : fakeData
 
   return (
-    <>
+    <div className="form-container">
     <Link to="/">Home</Link>
       <h1>Current Employees</h1>
-      <Table list={employeeList} />
-    </>
+      <Table list={list} />
+    </div>
   )
 }
 

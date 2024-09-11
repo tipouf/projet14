@@ -1,0 +1,267 @@
+[
+  {
+    "firstName": "Ava",
+    "lastName": "Hall",
+    "dateOfBirth": "1985-03-15",
+    "startDate": "2020-08-01",
+    "street": "1234 Main St",
+    "city": "Springfield",
+    "state": "IL",
+    "zipCode": "62701",
+    "department": "Sales"
+  },
+  {
+    "firstName": "Liam",
+    "lastName": "Brown",
+    "dateOfBirth": "1992-05-03",
+    "startDate": "2020-04-01",
+    "street": "5678 Oak St",
+    "city": "Decatur",
+    "state": "IL",
+    "zipCode": "62523",
+    "department": "Marketing"
+  },
+  {
+    "firstName": "Noah",
+    "lastName": "Davis",
+    "dateOfBirth": "1982-08-24",
+    "startDate": "2020-01-01",
+    "street": "9012 Elm St",
+    "city": "Peoria",
+    "state": "IL",
+    "zipCode": "61604",
+    "department": "HR"
+  },
+  {
+    "firstName": "Ethan",
+    "lastName": "Miller",
+    "dateOfBirth": "1987-11-15",
+    "startDate": "2020-07-01",
+    "street": "1111 Maple St",
+    "city": "Bloomington",
+    "state": "IL",
+    "zipCode": "61701",
+    "department": "IT"
+  },
+  {
+    "firstName": "Lucas",
+    "lastName": "Wilson",
+    "dateOfBirth": "1999-02-02",
+    "startDate": "2020-03-01",
+    "street": "2222 Pine St",
+    "city": "Champaign",
+    "state": "IL",
+    "zipCode": "61820",
+    "department": "Finance"
+  },
+  {
+    "firstName": "Olivia",
+    "lastName": "Moore",
+    "dateOfBirth": "1989-09-09",
+    "startDate": "2020-06-01",
+    "street": "3333 Cedar St",
+    "city": "Urbana",
+    "state": "IL",
+    "zipCode": "61801",
+    "department": "Operations"
+  },
+  {
+    "firstName": "Benjamin",
+    "lastName": "Taylor",
+    "dateOfBirth": "1996-01-15",
+    "startDate": "2020-05-01",
+    "street": "4444 Oak St",
+    "city": "Normal",
+    "state": "IL",
+    "zipCode": "61761",
+    "department": "Engineering"
+  },
+  {
+    "firstName": "Logan",
+    "lastName": "Walker",
+    "dateOfBirth": "1983-06-03",
+    "startDate": "2020-02-01",
+    "street": "5555 Elm St",
+    "city": "Moline",
+    "state": "IL",
+    "zipCode": "61265",
+    "department": "Sales"
+  },
+  {
+    "firstName": "Abigail",
+    "lastName": "Hall",
+    "dateOfBirth": "1994-08-15",
+    "startDate": "2020-09-01",
+    "street": "6666 Maple St",
+    "city": "Rockford",
+    "state": "IL",
+    "zipCode": "61101",
+    "department": "Marketing"
+  },
+  {
+    "firstName": "Gabriel",
+    "lastName": "Davis",
+    "dateOfBirth": "1988-11-01",
+    "startDate": "2020-10-01",
+    "street": "7777 Pine St",
+    "city": "Naperville",
+    "state": "IL",
+    "zipCode": "60540",
+    "department": "HR"
+  },
+  {
+    "firstName": "Alexander",
+    "lastName": "Miller",
+    "dateOfBirth": "1991-04-15",
+    "startDate": "2020-11-01",
+    "street": "8888 Cedar St",
+    "city": "Wheaton",
+    "state": "IL",
+    "zipCode": "60187",
+    "department": "IT"
+  },
+  {
+    "firstName": "Julia",
+    "lastName": "Wilson",
+    "dateOfBirth": "1997-07-07",
+    "startDate": "2020-12-01",
+    "street": "9999 Oak St",
+    "city": "Joliet",
+    "state": "IL",
+    "zipCode": "60435",
+    "department": "Finance"
+  },
+  {
+    "firstName": "Sofia",
+    "lastName": "Moore",
+    "dateOfBirth": "1990-03-03",
+    "startDate": "2021-01-01",
+    "street": "10101 Elm St",
+    "city": "Elgin",
+    "state": "IL",
+    "zipCode": "60120",
+    "department": "Operations"
+  },
+  {
+    "firstName": "Mia",
+    "lastName": "Taylor",
+    "dateOfBirth": "1986-09-09",
+    "startDate": "2021-02-01",
+    "street": "11111 Maple St",
+    "city": "Schaumburg",
+    "state": "IL",
+    "zipCode": "60173",
+    "department": "Engineering"
+  },
+  {
+    "firstName": "Isabella",
+    "lastName": "Walker",
+    "dateOfBirth": "1993-01-01",
+    "startDate": "2021-03-01",
+    "street": "12111 Pine St",
+    "city": "Aurora",
+    "state": "IL",
+    "zipCode": "60504",
+    "department": "Sales"
+  },
+  {
+    "firstName": "Charlotte",
+    "lastName": "Hall",
+    "dateOfBirth": "1998-06-06",
+    "startDate": "2021-04-01",
+    "street": "13111 Cedar St",
+    "city": "Plainfield",
+    "state": "IL",
+    "zipCode": "60544",
+    "department": "Marketing"
+  },
+  {
+    "firstName": "Amelia",
+    "lastName": "Davis",
+    "dateOfBirth": "1984-05-05",
+    "startDate": "2021-05-01",
+    "street": "14111 Oak St",
+    "city": "Orland Park",
+    "state": "IL",
+    "zipCode": "60462",
+    "department": "HR"
+  },
+  {
+    "firstName": "Harper",
+    "lastName": "Miller",
+    "dateOfBirth": "1995-10-10",
+    "startDate": "2021-06-01",
+    "street": "15111 Elm St",
+    "city": "Tinley Park",
+    "state": "IL",
+    "zipCode": "60477",
+    "department": "IT"
+  },
+  {
+    "firstName": "Evelyn",
+    "lastName": "Wilson",
+    "dateOfBirth": "1981-02-02",
+    "startDate": "2021-07-01",
+    "street": "16111 Maple St",
+    "city": "Oak Lawn",
+    "state": "IL",
+    "zipCode": "60453",
+    "department": "Finance"
+  },
+  {
+    "firstName": "Avery",
+    "lastName": "Moore",
+    "dateOfBirth": "1992-08-08",
+    "startDate": "2021-08-01",
+    "street": "17111 Pine St",
+    "city": "Park Ridge",
+    "state": "IL",
+    "zipCode": "60068",
+    "department": "Operations"
+  },
+  {
+    "firstName": "Riley",
+    "lastName": "Taylor",
+    "dateOfBirth": "1985-12-12",
+    "startDate": "2021-09-01",
+    "street": "18111 Cedar St",
+    "city": "Des Plaines",
+    "state": "IL",
+    "zipCode": "60016",
+    "department": "Engineering"
+  },
+  {
+    "firstName": "Luna",
+    "lastName": "Walker",
+    "dateOfBirth": "1999-04-04",
+    "startDate": "2021-10-01",
+    "street": "19111 Oak St",
+    "city": "Mount Prospect",
+    "state": "IL",
+    "zipCode": "60056",
+    "department": "Sales"
+  },
+  {
+    "firstName": "Gracie",
+    "lastName": "Hall",
+    "dateOfBirth": "1987-07-07",
+    "startDate": "2021-11-01",
+    "street": "20111 Elm St",
+    "city": "Glenview",
+    "state": "IL",
+    "zipCode": "60025",
+    "department": "Marketing"
+  },
+  {
+    "firstName": "Adeline",
+    "lastName": "Davis",
+    "dateOfBirth": "1990-01-01",
+    "startDate": "2021-12-01",
+    "street": "21111 Maple St",
+    "city": "Waukegan",
+    "state": "IL",
+    "zipCode": "60085",
+    "department": "HR"
+  }
+]
+
