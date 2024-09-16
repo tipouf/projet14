@@ -2,7 +2,7 @@
 import { Link } from 'react-router-dom';
 import { EmployeeContext } from "../../context/useContext";
 import { useContext } from "react";
-import { Table }  from 'react-auto-table-ts-alpha';
+import { Table }  from 'react-auto-table-ts';
 
 import fakeData from "../../../fakeData.json"
 
@@ -16,7 +16,7 @@ const List = () => {
     <div className="form-container">
     <Link to="/">Home</Link>
       <h1>Current Employees</h1>
-      <Table list={list} />
+      <Table list={list} extraProps={{displayPagination: true}}/>
     </div>
   )
 }

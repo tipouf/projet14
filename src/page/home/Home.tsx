@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Grid, TextField, Button, Select, MenuItem, Modal, Box, FormControl, FormLabel } from '@mui/material';
 import './Home.scss';
 import { EmployeeContext, Employee } from '../../context/useContext';
-import hrnet from '../../../public/hrnet.png';
+import hrnet from '../../assets/hrnet.svg';
 
 const Home = () => {
   const { saveEmployee } = useContext(EmployeeContext);
@@ -41,7 +41,7 @@ const Home = () => {
         <>
         <div className="form-container">
           <div className="app-title">
-            <img src={hrnet} alt="HRnet" className="app-logo" />
+            <img src={hrnet} alt="HRnet logo" width={200} height={200} />
           </div>
           <div className="employee-container">
           <Link to="/list">View current employees</Link>
@@ -51,7 +51,7 @@ const Home = () => {
             </h2>
             <form className="form" id="create-employee" onSubmit={handleSaveEmployee}>
               <Grid container spacing={2}>
-                <Grid item xs={12} sm={12}>
+                <Grid item xs={12} sm={6}>
                   <FormControl fullWidth>
                     <FormLabel>First Name</FormLabel>
                     <TextField
@@ -64,7 +64,7 @@ const Home = () => {
                     />
                   </FormControl>
                 </Grid>
-                <Grid item xs={12} sm={12}>
+                <Grid item xs={12} sm={6}>
                   <FormControl fullWidth>
                     <FormLabel>Last Name</FormLabel>
                     <TextField
@@ -77,7 +77,7 @@ const Home = () => {
                     />
                   </FormControl>
                 </Grid>
-                <Grid item xs={12} sm={12}>
+                <Grid item xs={6} sm={6}>
                   <FormControl fullWidth>
                     <FormLabel>Date of Birth</FormLabel>
                     <TextField
@@ -91,7 +91,7 @@ const Home = () => {
                     />
                   </FormControl>
                 </Grid>
-                <Grid item xs={12} sm={12}>
+                <Grid item xs={6} sm={6}>
                   <FormControl fullWidth>
                     <FormLabel>Start Date</FormLabel>
                     <TextField
@@ -108,7 +108,7 @@ const Home = () => {
                 <Grid item xs={12}>
                   <h2>Address</h2>
                 </Grid>
-                <Grid item xs={12} sm={12}>
+                <Grid item xs={6} sm={6}>
                   <FormControl fullWidth>
                     <FormLabel>Street</FormLabel>
                     <TextField
@@ -121,7 +121,7 @@ const Home = () => {
                     />
                   </FormControl>
                 </Grid>
-                <Grid item xs={12} sm={12}>
+                <Grid item xs={6} sm={6}>
                   <FormControl fullWidth>
                     <FormLabel>City</FormLabel>
                     <TextField
@@ -153,7 +153,7 @@ const Home = () => {
                     </Select>
                   </FormControl>
                 </Grid>
-                <Grid item xs={12} sm={12}>
+                <Grid item xs={6} sm={6}>
                   <FormControl fullWidth>
                     <FormLabel>Zip Code</FormLabel>
                     <TextField
@@ -167,7 +167,7 @@ const Home = () => {
                     />
                   </FormControl>
                 </Grid>
-                <Grid item xs={12} sm={12}>
+                <Grid item xs={6} sm={6}>
                   <FormControl fullWidth>
                     <FormLabel>Department</FormLabel>
                     <Select
