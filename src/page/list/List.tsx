@@ -4,14 +4,13 @@ import { EmployeeContext } from "../../context/useContext";
 import { useContext } from "react";
 import { Table }  from 'react-auto-table-ts';
 
-// import fakeData from "../../../fakeData.json"
+import fakeData from "../../../fakeData.json"
 
 const List = () => {
 
   const {employeeList} = useContext(EmployeeContext)
 
-  const list = employeeList
-  //.length > 0 ? employeeList : fakeData
+  const list = employeeList.length > 0 ? employeeList : fakeData
 
   return (
     <div className="form-container">
