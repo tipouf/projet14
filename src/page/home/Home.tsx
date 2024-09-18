@@ -23,7 +23,7 @@ const Home = () => {
     
       const [isModalOpen, setIsModalOpen] = useState(false);
     
-      const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+      const handleChange = (event: React.ChangeEvent<any>) => {
         setEmployeeData((prevData) => ({
           ...prevData,
           [event.target.name]: event.target.value,
@@ -58,7 +58,7 @@ const Home = () => {
                       fullWidth
                       name="firstName"
                       value={employeeData.firstName}
-                      onChange={(e) => handleChange(e as React.ChangeEvent<HTMLInputElement | HTMLSelectElement>)}
+                      onChange={(e) => handleChange(e as React.ChangeEvent<any>)}
                       placeholder="Enter first name"
                       required
                     />
@@ -71,7 +71,7 @@ const Home = () => {
                       fullWidth
                       name="lastName"
                       value={employeeData.lastName}
-                      onChange={(e) => handleChange(e as React.ChangeEvent<HTMLInputElement | HTMLSelectElement>)}
+                      onChange={(e) => handleChange(e as React.ChangeEvent<any>)}
                       placeholder="Enter last name"
                       required
                     />
@@ -85,7 +85,7 @@ const Home = () => {
                       type="date"
                       name="dateOfBirth"
                       value={employeeData.dateOfBirth}
-                      onChange={(e) => handleChange(e as React.ChangeEvent<HTMLInputElement | HTMLSelectElement>)}
+                      onChange={(e) => handleChange(e as React.ChangeEvent<any>)}
                       placeholder="Enter date of birth"
                       required
                     />
@@ -99,7 +99,7 @@ const Home = () => {
                       type="date"
                       name="startDate"
                       value={employeeData.startDate}
-                      onChange={(e) => handleChange(e as React.ChangeEvent<HTMLInputElement | HTMLSelectElement>)}
+                      onChange={(e) => handleChange(e as React.ChangeEvent<any>)}
                       placeholder="Enter start date"
                       required
                     />
@@ -115,7 +115,7 @@ const Home = () => {
                       fullWidth
                       name="street"
                       value={employeeData.street}
-                      onChange={(e) => handleChange(e as React.ChangeEvent<HTMLInputElement | HTMLSelectElement>)}
+                      onChange={(e) => handleChange(e as React.ChangeEvent<any>)}
                       placeholder="Enter street"
                       required
                     />
@@ -128,7 +128,7 @@ const Home = () => {
                       fullWidth
                       name="city"
                       value={employeeData.city}
-                      onChange={(e) => handleChange(e as React.ChangeEvent<HTMLInputElement | HTMLSelectElement>)}
+                      onChange={(e) => handleChange(e as React.ChangeEvent<any>)}
                       placeholder="Enter city"
                       required
                     />
@@ -141,7 +141,7 @@ const Home = () => {
                       fullWidth
                       name="state"
                       value={employeeData.state}
-                      onChange={(e) => handleChange(e as React.ChangeEvent<HTMLInputElement | HTMLSelectElement>)}
+                      onChange={(e) => handleChange(e as React.ChangeEvent<any>)}
                       displayEmpty
                       placeholder="Select a state"
                       required
@@ -161,7 +161,7 @@ const Home = () => {
                       type="number"
                       name="zipCode"
                       value={employeeData.zipCode}
-                      onChange={(e) => handleChange(e as React.ChangeEvent<HTMLInputElement | HTMLSelectElement>)}
+                      onChange={(e) => handleChange(e as React.ChangeEvent<any>)}
                       placeholder="Enter zip code"
                       required
                     />
@@ -174,7 +174,7 @@ const Home = () => {
                       fullWidth
                       name="department"
                       value={employeeData.department}
-                      onChange={(e) => handleChange(e as React.ChangeEvent<HTMLInputElement | HTMLSelectElement>)}
+                      onChange={(e) => handleChange(e as React.ChangeEvent<any>)}
                       displayEmpty
                       required
                     >
