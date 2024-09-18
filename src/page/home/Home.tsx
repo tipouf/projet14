@@ -1,12 +1,12 @@
 import { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { Grid, TextField, Button, Select, MenuItem, Modal, Box, FormControl, FormLabel } from '@mui/material';
+import { Grid, TextField, Button, Select, MenuItem, Modal, Box, FormControl, FormLabel, Switch } from '@mui/material';
 import './Home.scss';
 import { EmployeeContext, Employee } from '../../context/useContext';
 import hrnet from '../../assets/hrnet.svg';
 
 const Home = () => {
-  const { saveEmployee } = useContext(EmployeeContext);
+  const { saveEmployee, switchFakeData, setSwitchFakeData } = useContext(EmployeeContext);
     const initialEmployeeData = {
         firstName: '',
         lastName: '',
@@ -29,6 +29,10 @@ const Home = () => {
           [event.target.name]: event.target.value,
         }));
       };
+
+      const handleSwitchFakeData = () => {
+        setSwitchFakeData(!switchFakeData)
+      }
     
       const handleSaveEmployee = (event: React.FormEvent) => {
         event.preventDefault();
@@ -188,6 +192,16 @@ const Home = () => {
                   </FormControl>
                 </Grid>
               </Grid>
+              <div className="switch">
+              <FormControl>
+                <FormLabel>Fake data</FormLabel>
+                <Switch
+                  checked={switchFakeData}
+                  onChange={handleSwitchFakeData}
+                  color="primary"
+                />
+              </FormControl>
+              </div>
               <Button
                 type="submit"
                 variant="contained"
