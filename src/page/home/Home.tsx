@@ -4,6 +4,8 @@ import { Grid, TextField, Button, Select, MenuItem, Modal, Box, FormControl, For
 import './Home.scss';
 import { EmployeeContext, Employee } from '../../context/useContext';
 import hrnet from '../../assets/hrnet.svg';
+import {States, Departments} from '../../data/data';
+
 
 const Home = () => {
   const { saveEmployee, switchFakeData, setSwitchFakeData } = useContext(EmployeeContext);
@@ -40,7 +42,7 @@ const Home = () => {
         setIsModalOpen(true);
         setEmployeeData(initialEmployeeData);
       };
-    
+
       return (
         <>
         <div className="form-container">
@@ -151,9 +153,11 @@ const Home = () => {
                       required
                     >
                       <MenuItem value="" disabled>Select a state</MenuItem>
-                      <MenuItem value="AL">Alabama (AL)</MenuItem>
-                      <MenuItem value="AK">Alaska (AK)</MenuItem>
-                      <MenuItem value="AZ">Arizona (AZ)</MenuItem>
+                      {States.map((state) => (
+                        <MenuItem key={state.abbreviation} value={state.abbreviation}>
+                          {state.name} ({state.abbreviation})
+                        </MenuItem>
+                      ))}
                     </Select>
                   </FormControl>
                 </Grid>
@@ -183,11 +187,11 @@ const Home = () => {
                       required
                     >
                       <MenuItem value="" disabled>Select a department</MenuItem>
-                      <MenuItem value="Sales">Sales</MenuItem>
-                      <MenuItem value="Marketing">Marketing</MenuItem>
-                      <MenuItem value="Engineering">Engineering</MenuItem>
-                      <MenuItem value="Human Resources">Human Resources</MenuItem>
-                      <MenuItem value="Legal">Legal</MenuItem>
+                      {Departments.map((department) => (
+                        <MenuItem key={department} value={department}>
+                          {department}
+                        </MenuItem>
+                      ))}
                     </Select>
                   </FormControl>
                 </Grid>
