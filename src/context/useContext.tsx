@@ -33,7 +33,6 @@ export const EmployeeProvider = ({ children }: { children: React.ReactNode }) =>
     }
 
     useEffect(() => {
-        console.log(switchFakeData)
         if (switchFakeData) {
             setEmployeeList(fakeData)
         } else {
