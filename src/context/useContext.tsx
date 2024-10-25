@@ -32,13 +32,8 @@ export const EmployeeProvider = ({ children }: { children: React.ReactNode }) =>
         setEmployeeList([...employeeList, employee])
     }
 
-    useEffect(() => {
-        if (switchFakeData) {
-            setEmployeeList(fakeData)
-        } else {
-            setEmployeeList([])
-        }
-    }, [switchFakeData])
+    useEffect(() => setEmployeeList(switchFakeData ? fakeData : []), [switchFakeData])
+    
     return (
         <EmployeeContext.Provider value={{ employeeList, setSwitchFakeData, switchFakeData, saveEmployee }}>
             {children}

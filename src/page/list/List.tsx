@@ -11,10 +11,10 @@ const List = () => {
   return (
     <div className="form-container">
       <div className="list-container">
-    <Link to="/">Home</Link>
-      <h1>Current Employees</h1>
-      <Table list={employeeList} extraProps={{displayPagination: true}}/>
-    </div>
+        <Link to="/">Home</Link>
+        <h1>Current Employees</h1>
+      <Table list={employeeList || []}/>
+      </div>
     </div>
   )
 }
